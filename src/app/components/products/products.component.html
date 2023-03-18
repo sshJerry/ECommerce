@@ -1,0 +1,16 @@
+<p>products works!</p>
+
+<ul class="products">
+    <li *ngFor="let product of products">
+        <!--
+        <span class="badge">{{product.catorgoryGroup.catogoryId}}</span>
+        <span class="badge">{{product.catorgoryGroup.catogoryName}}</span>
+        -->
+        <!-- Question Mark here is called "Optional Chaining". Why is it required?-->
+        CAT ID: <span class="badge">{{product.catorgoryGroup?.catogoryId}}</span>
+        CAT NAME: <span class="badge">{{product.catorgoryGroup?.catogoryName}}</span>
+        PROD ID: <span class="name">{{product.productId}}</span> &nbsp
+        PROD DESC: <span class="name">{{product.productDescription}}</span> &nbsp
+        PROD PRICE: <span class="name">{{product.productPrice}}</span> &nbsp
+    </li>
+</ul>
