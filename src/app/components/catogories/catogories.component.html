@@ -16,8 +16,10 @@
 <h2>My Catogories</h2>
 <ul class="catogories">
     <li *ngFor="let catogory of catogories">
-        <span class="badge">{{catogory.catogoryId}}</span>
-        <span class="name">{{catogory.catogoryName}}</span>
+        <button type="button" (click)="onSelect(catogory)">
+            <span class="badge">{{catogory.catogoryId}}</span>
+            <span class="name">{{catogory.catogoryName}}</span>
+        </button>
     </li>
 </ul>
 
