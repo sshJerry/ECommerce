@@ -23,6 +23,22 @@
     </li>
 </ul>
 
+<h3>Selected Test</h3>
+<div *ngIf="selectedCatogory">
+    <h4> {{selectedCatogory.catogoryName | uppercase}}</h4>
+    <h4> id: {{selectedCatogory.catogoryId}}</h4>
+</div>
+
+<h2>Current Observable Test</h2>
+<div *ngIf="componentCatogory">
+    <h3> {{componentCatogory.catogoryName | uppercase}}</h3>
+    <h3> id: {{componentCatogory.catogoryId}}</h3>
+</div>
+
+
+
+
+
 <br><br><br>
 
 <hr>

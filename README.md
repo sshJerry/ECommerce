@@ -1,4 +1,4 @@
-Annual Job Competency Assignment
+Annual Job Compendency Assignment
 
 
 # CommerceUI
