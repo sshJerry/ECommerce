@@ -1,7 +1,10 @@
-import { Component, OnInit } from '@angular/core';
-import { PRODUCTS } from 'src/app/core/consants/mock-products';
+import { Component, OnInit, OnChanges, SimpleChanges, Input } from '@angular/core';
 import { DataService } from 'src/app/core/services/data.service';
 import { ProductsInterface } from './products-interface';
+import { CartInterface } from '../cart/cart-interface';
+import { Router} from '@angular/router';
+import { Subscription } from 'rxjs';
+
 
 @Component({
   selector: 'app-products',
@@ -9,32 +12,23 @@ import { ProductsInterface } from './products-interface';
   styleUrls: ['./products.component.css']
 })
 export class ProductsComponent {
-  products = PRODUCTS;
-  componentCatogory : any;
+  @Input() componentCatogory : any;
   componentProduct: ProductsInterface = {} as ProductsInterface;
   componentProducts: ProductsInterface[] = [];
-  componentProductsTest: ProductsInterface[] = [];
+  subscription: Subscription;
 
-  constructor(private dataService: DataService) {
-    this.dataService.currentCatogory.subscribe(
-      componentCatogory => this.componentCatogory = componentCatogory);
-  }
+  constructor(
+    private dataService: DataService,
+    private router: Router
+  ) {}
 
-  ngOnInit(): void{
-    console.log(this.products);
-    this.dataService.currentCatogory.subscribe(
-      componentCatogory => this.componentCatogory = componentCatogory);
+  ngOnChanges(changes: SimpleChanges){
+    this.dataService.currentCatogory.subscribe(componentCatogory => this.componentCatogory = componentCatogory);
     this.getProductsById(this.componentCatogory.catogoryId);
   }
-  
-
-  getComponentProducts(): void {
-    this.dataService.getProducts().subscribe(
-      products => this.products = products
-    );
-    //console.log(this.products);
+  ngOnInit():void{
   }
-
+  
   getProductsById(productCatogoryId:number) : void{
     this.dataService.getProducts().subscribe({
       next:(data)=>{
@@ -44,17 +38,24 @@ export class ProductsComponent {
   }
 
   filterProductForProducts(productList:ProductsInterface[], id:number): void{
-    let counter:number= 0;
-    let list: ProductsInterface[];
+    this.componentProducts = [];
     productList.forEach((componentProduct) =>{
       if(componentProduct.catorgoryGroup?.catogoryId == id){
-        counter+=1;
-        console.log("Log Number: " + counter);
-        console.log(componentProduct);
         this.componentProducts.push(componentProduct);
       }
     });
   }
-  
 
+  currentProductCart: CartInterface[] = [];
+  cartItem:string;
+  cartItemPrice:number;
+  buy(product: ProductsInterface){
+    this.currentProductCart.push({
+      cartItem: product.catorgoryGroup!.catogoryName, 
+      cartItemPrice: product.productPrice
+    });
+    this.dataService.addToCart(this.currentProductCart);
+    console.log("You Chill? ", this.currentProductCart);
+    this.router.navigate(['/']);
+  }
 }

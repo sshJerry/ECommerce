@@ -2,32 +2,32 @@ import { ProductsInterface } from "src/app/components/products/products-interfac
 
 export const PRODUCTS: ProductsInterface[] = [
 {catorgoryGroup : 
-    {catogoryId:1, catogoryName:"Wells Fargo Mock"}, 
-    productId:11, productDescription:"Desc for 11", productPrice:11},
+    {catogoryId:1, catogoryName:"Software"}, 
+    productId:11, productDescription:"Sony Vegas 12", productPrice:1400},
 {catorgoryGroup : 
-    {catogoryId:1, catogoryName:"Wells Fargo Mock"}, 
-    productId:12, productDescription:"Desc for 12", productPrice:12},
+    {catogoryId:1, catogoryName:"Software"}, 
+    productId:12, productDescription:"Adobe Photoshop", productPrice:49},
 {catorgoryGroup : 
-    {catogoryId:1, catogoryName:"Wells Fargo Mock"}, 
-    productId:13, productDescription:"Desc for 13", productPrice:13},
+    {catogoryId:1, catogoryName:"Software"}, 
+    productId:13, productDescription:"OBS", productPrice:5},
 
 {catorgoryGroup : 
-    {catogoryId:2, catogoryName:"Captial 1 Mock"}, 
-    productId:21, productDescription:"Desc for 21", productPrice:21},
+    {catogoryId:2, catogoryName:"Hardware"}, 
+    productId:21, productDescription:"HP Laptop", productPrice:499},
 {catorgoryGroup : 
-    {catogoryId:2, catogoryName:"Captial 1 Mock"}, 
-    productId:22, productDescription:"Desc for 22", productPrice:22},
+    {catogoryId:2, catogoryName:"Hardware"}, 
+    productId:22, productDescription:"ASUS Laptop", productPrice:399},
 {catorgoryGroup : 
-    {catogoryId:2, catogoryName:"Captial 1 Mock"}, 
-    productId:23, productDescription:"Desc for 23", productPrice:23},
+    {catogoryId:2, catogoryName:"Hardware"}, 
+    productId:23, productDescription:"Macbook Pro", productPrice:3000},
 
 {catorgoryGroup : 
-    {catogoryId:3, catogoryName:"Chase Mock"}, 
-    productId:31, productDescription:"Desc for 31", productPrice:31},
+    {catogoryId:3, catogoryName:"Misc"}, 
+    productId:31, productDescription:"Wireless Mouse", productPrice:35},
 {catorgoryGroup : 
-    {catogoryId:3, catogoryName:"Chase Mock"}, 
-    productId:32, productDescription:"Desc for 32", productPrice:32},
+    {catogoryId:3, catogoryName:"Misc"}, 
+    productId:32, productDescription:"Screen Cleaner", productPrice:9},
 {catorgoryGroup : 
-    {catogoryId:3, catogoryName:"Chase Mock"}, 
-    productId:33, productDescription:"Desc for 33", productPrice:33}
+    {catogoryId:3, catogoryName:"Misc"}, 
+    productId:33, productDescription:"Headset", productPrice:25}
 ];

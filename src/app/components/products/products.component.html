@@ -1,18 +1,4 @@
-<p>products works!</p>
 
-<h1>OLD PRODUCTS</h1>
-
-<ul class="products">
-    <li *ngFor="let product of products">
-        <!-- Question Mark here is called "Optional Chaining". Why is it required?-->
-        CAT ID: <span class="badge">{{product.catorgoryGroup?.catogoryId}}</span>
-        CAT NAME: <span class="badge">{{product.catorgoryGroup?.catogoryName}}</span>
-        PROD ID: <span class="name">{{product.productId}}</span>
-        PROD DESC: <span class="name">{{product.productDescription}}</span>
-        PROD PRICE: <span class="name">{{product.productPrice}}</span>
-    </li>
-</ul>
-<br>
 <h1>NEW PRODUCTS</h1>
 
 <ul class="">
@@ -23,5 +9,10 @@
         PROD ID: <span class="name">{{product.productId}}</span>
         PROD DESC: <span class="name">{{product.productDescription}}</span>
         PROD PRICE: <span class="name">{{product.productPrice}}</span>
+        <button type="button" (click)="buy(product)">
+            <span class="badge">Buy</span>
+        </button>
     </li>
 </ul>
+
+<app-cart></app-cart>

@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { CatogoriesInterface } from 'src/app/components/catogories/catogories-interface';
 import { ProductsInterface } from 'src/app/components/products/products-interface';
+import { CartInterface } from 'src/app/components/cart/cart-interface';
 import { PRODUCTS } from '../consants/mock-products';
 import { Observable, of } from 'rxjs';
 
@@ -13,6 +14,11 @@ export class DataService {
     catogoryId: 1, catogoryName: "Wells Fargo Mock"
   });
   currentCatogory = this.currentCatogorySource.asObservable();
+
+  private _cartSource = new BehaviorSubject([]);
+  currentCartItems = this._cartSource.asObservable();
+
+
   constructor() { }
 
   changeCatogory (catogory: CatogoriesInterface){
@@ -24,6 +30,10 @@ export class DataService {
     const products = of (PRODUCTS);
     return products;
   }
+  
+  addToCart(cartItems: CartInterface[]):void {
+    this._cartSource.next(cartItems);
+  }
 
-  //getProductsById(productCatogoryId:number){}
+
 }

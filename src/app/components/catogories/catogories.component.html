@@ -1,18 +1,4 @@
-<p>catogories works!</p>
 
-<!--
-<h2>First Catogory</h2>
-<div><span>id: </span>{{catogory.catogoryId}}</div>
-<div><span>Catogory Name: </span>{{catogory.catogoryName}}</div>
-<hr>
-<div>
-    <label for="catogoryName">Catogory Name: </label>
-    <input id="catogoryName" [(ngModel)]="catogory.catogoryName" placeholder="name">
-</div>
-
-            <span class="badge">{{catogory.catogoryId}}</span>
-            <span class="name">{{catogory.catogoryName}}</span>
--->
 <h2>My Catogories</h2>
 <ul class="catogories">
     <li *ngFor="let catogory of catogories">
@@ -23,22 +9,5 @@
     </li>
 </ul>
 
-<h3>Selected Test</h3>
-<div *ngIf="selectedCatogory">
-    <h4> {{selectedCatogory.catogoryName | uppercase}}</h4>
-    <h4> id: {{selectedCatogory.catogoryId}}</h4>
-</div>
-
-<h2>Current Observable Test</h2>
-<div *ngIf="componentCatogory">
-    <h3> {{componentCatogory.catogoryName | uppercase}}</h3>
-    <h3> id: {{componentCatogory.catogoryId}}</h3>
-</div>
-
-
-
-
-
-<br><br><br>
-
+<app-products [componentCatogory]="componentCatogory"></app-products>
 <hr>
